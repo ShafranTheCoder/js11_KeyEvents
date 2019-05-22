@@ -1,31 +1,35 @@
 'use strict';
 
-document.getElementById('firstInput').addEventListener('click', function () {
+window.onload = function () {
 
-    let input = document.getElementById('firstPassword');
-    if (input.type === 'password') {
-        document.getElementById('firstInput').classList.replace('fa-eye', 'fa-eye-slash');
-        input.type = 'text';
-    } else {
-        input.type = 'password';
-        document.getElementById('firstInput').classList.replace('fa-eye-slash', 'fa-eye');
-    }
-});
-document.getElementById('secondInput').addEventListener('click', function () {
+    document.onkeydown = function (event) {
+        let buttons = document.querySelectorAll('.btn-wrapper button');
+        buttons.forEach(function(btn){
+            btn.classList.remove('blue');
 
-    let input = document.getElementById('secondPassword');
-    if (input.type === 'password') {
-        document.getElementById('secondInput').classList.replace('fa-eye', 'fa-eye-slash');
-        input.type = 'text';
-    } else {
-        input.type = 'password';
-        document.getElementById('secondInput').classList.replace('fa-eye-slash', 'fa-eye');
+        });
+        if (event.key === 'Enter') {
+            enter.classList.add('blue');
+        }
+        if (event.key === 's') {
+            s.classList.add('blue');
+        }
+        if (event.key === 'e') {
+            e.classList.add('blue');
+        }
+        if (event.key === 'o') {
+            o.classList.add('blue');
+        }
+        if (event.key === 'n') {
+            n.classList.add('blue');
+        }
+        if (event.key === 'l') {
+            l.classList.add('blue');
+        }
+        if (event.key === 'z') {
+            z.classList.add('blue');
+        }
+
+
     }
-});
-document.getElementById('btn').addEventListener('click', () => {
-   if (firstPassword.value === secondPassword.value) {
-       alert('You are welcome');
-   } else {
-       errorMessage.innerText = 'Нужно ввести одинаковые значения';
-   }
-});
+};
